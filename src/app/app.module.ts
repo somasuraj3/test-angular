@@ -11,6 +11,9 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
+import { PayfixComponent } from './payfix/payfix.component';
+import { PayfixListComponent } from './payfix/payfix-list/payfix-list.component';
+import { PayfixListItemComponent } from './payfix/payfix-list/payfix-list-item/payfix-list-item.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -20,6 +23,7 @@ const routes: Routes = [
   { path: 'pricing', component: PricingComponent },
   { path: 'aboutus', component: AboutUsComponent },
   { path: 'contactus', component: ContactUsComponent },
+  { path: 'payfix', component: PayfixComponent },
   { path: '**', component: HomeComponent }
 ];
 
@@ -33,7 +37,10 @@ const routes: Routes = [
     AboutUsComponent,
     ContactUsComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    PayfixComponent,
+    PayfixListComponent,
+    PayfixListItemComponent
   ],
   imports: [
     BrowserModule,
