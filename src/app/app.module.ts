@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, Router } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { AboutUsComponent } from './about-us/about-us.component';
@@ -14,6 +14,10 @@ import { SignupComponent } from './signup/signup.component';
 import { PayfixComponent } from './payfix/payfix.component';
 import { PayfixListComponent } from './payfix/payfix-list/payfix-list.component';
 import { PayfixListItemComponent } from './payfix/payfix-list/payfix-list-item/payfix-list-item.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { AdminComponent } from './admin/admin.component';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -24,7 +28,23 @@ const routes: Routes = [
   { path: 'aboutus', component: AboutUsComponent },
   { path: 'contactus', component: ContactUsComponent },
   { path: 'payfix', component: PayfixComponent },
-  { path: '**', component: HomeComponent }
+  // {
+  //   path: 'admin', component: AdminComponent,
+  //   children: [
+  //     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  //     { path: 'dashboard', component: AdminDashboardComponent }
+  //   ]
+  // },
+  // {
+  //   path: 'user', component: UserComponent,
+  //   children: [
+  //     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  //     { path: 'dashboard', component: UserDashboardComponent }
+  //   ]
+  // },
+  { path: 'admin', component: AdminComponent },
+  { path: 'user', component: UserComponent },
+  { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({
@@ -40,7 +60,11 @@ const routes: Routes = [
     SignupComponent,
     PayfixComponent,
     PayfixListComponent,
-    PayfixListItemComponent
+    PayfixListItemComponent,
+    AdminDashboardComponent,
+    UserDashboardComponent,
+    AdminComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

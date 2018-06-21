@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { strictEqual } from 'assert';
+
 
 @Component({
   selector: 'app-payfix-list-item',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./payfix-list-item.component.css']
 })
 export class PayfixListItemComponent implements OnInit {
+
+  @Input() item: any;
 
   constructor() { }
 
