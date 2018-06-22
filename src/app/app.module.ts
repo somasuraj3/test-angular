@@ -24,6 +24,7 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { UserPayfixComponent } from './user-payfix/user-payfix.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserComponent } from './user/user.component';
+import { AdminLogsComponent } from './admin-logs/admin-logs.component';
 
 
 const routes: Routes = [
@@ -42,6 +43,7 @@ const routes: Routes = [
       { path: 'dashboard', component: AdminDashboardComponent },
       { path: 'payfix', component: AdminPayfixComponent },
       { path: 'manageusers', component: AdminManageUsersComponent },
+      { path: 'logs', component: AdminLogsComponent },
       { path: 'profile', component: AdminProfileComponent },
       { path: 'changepass', component: AdminChangePasswordComponent }
     ]
@@ -83,7 +85,8 @@ const routes: Routes = [
     AdminProfileComponent,
     AdminPayfixComponent,
     UserPayfixComponent,
-    AdminManageUsersComponent
+    AdminManageUsersComponent,
+    AdminLogsComponent
   ],
   imports: [
     BrowserModule,
@@ -92,4 +95,5 @@ const routes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

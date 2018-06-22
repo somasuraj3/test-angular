@@ -1,20 +1,32 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-    <h1 class="h2">Manage Users</h1>
-    <div class="btn-toolbar mb-2 mb-md-0">
-        <div class="btn-group mr-2">
-            <button type="button" class="btn btn-success">
-                <i class="fa fa-plus-square-o fa-fw"></i>
-                Create New
-              </button>
-        </div>
-    </div>
+    <h1 class="h2">Logs</h1>
 </div>
 
-<h3 class="text-center">User's Information</h3>
+<h3 class="text-center">Logging Information</h3>
 <div class="card my-3 pt-2 pl-3">
     <form class="py-2 ml-2">
         <div class="form-inline">
-            <input type="text" style="width: 200px" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Enter email id">
+            <div class="input-group mb-2 pr-2">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Search By</span>
+                </div>
+                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+                    <option selected value="1">User Name</option>
+                    <option value="2">User Email</option>
+                    <option value="3">Date</option>
+                </select>
+            </div>
+            <div class="input-group mb-2 pr-2">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Select Event</span>
+                </div>
+                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+                    <option selected value="1">All</option>
+                    <option value="2">User Creation</option>
+                    <option value="3">User Transaction</option>
+                </select>
+            </div>
+            <input type="text" style="width: 200px" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Enter search term">
             <button type="submit" class="btn btn-primary mb-2 mr-4">
               <i class="fa fa-search fa-fw"></i>
               Search
@@ -31,7 +43,7 @@
                 <th>Email</th>
                 <th>Name</th>
                 <th>View Profile</th>
-                <th>View Logs</th>
+                <th>Event</th>
             </tr>
         </thead>
         <tbody>
