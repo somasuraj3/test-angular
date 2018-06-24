@@ -4,22 +4,30 @@
             <div class="sidebar-sticky">
                 <ul class="nav nav-pills flex-column pt-3">
                     <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['dashboard']" [routerLinkActive]="['active']">Dashboard<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" [routerLink]="['dashboard']" [routerLinkActive]="['active']">
+                            <i class="fa fa-bar-chart fa-fw"></i> Dashboard
+                            <span class="sr-only">(current)</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['payfix']" [routerLinkActive]="['active']">Fix It</a>
+                        <a class="nav-link" [routerLink]="['payfix']" [routerLinkActive]="['active']">
+                            <i class="fa fa-file-o fa-fw"></i> Pay Fixation</a>
                     </li>
                     <li class="nav-item" [routerLinkActive]="['active']">
-                        <a class="nav-link" [routerLink]="['manageusers']" [routerLinkActive]="['active']">Manage Users</a>
+                        <a class="nav-link" [routerLink]="['manageusers']" [routerLinkActive]="['active']">
+                            <i class="fa fa-users fa-fw"></i> Manage Users</a>
                     </li>
                     <li class="nav-item" [routerLinkActive]="['active']">
-                        <a class="nav-link" [routerLink]="['logs']" [routerLinkActive]="['active']">View Logs</a>
+                        <a class="nav-link" [routerLink]="['logs']" [routerLinkActive]="['active']">
+                            <i class="fa fa-line-chart fa-fw"></i> View Logs</a>
                     </li>
                     <li class="nav-item" [routerLinkActive]="['active']">
-                        <a class="nav-link" [routerLink]="['changepass']" [routerLinkActive]="['active']">Change Password</a>
+                        <a class="nav-link" [routerLink]="['changepass']" [routerLinkActive]="['active']">
+                            <i class="fa fa-wrench fa-fw"></i> Change Password</a>
                     </li>
                     <li class="nav-item" [routerLinkActive]="['active']">
-                        <a class="nav-link" [routerLink]="['/#/home']">Sign Out</a>
+                        <a class="nav-link" [routerLink]="['']">
+                            <i class="fa fa-sign-out fa-fw"></i> Sign Out</a>
                     </li>
                 </ul>
             </div>

@@ -1,116 +1,183 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-    <h1 class="h2">Manage Users</h1>
+    <h1 class="h2"><i class="fa fa-users fa-fw fa-2x mr-2"></i>Manage Users</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
         <div class="btn-group mr-2">
             <button type="button" class="btn btn-success">
                 <i class="fa fa-plus-square-o fa-fw"></i>
                 Create New
-              </button>
+            </button>
         </div>
     </div>
 </div>
-
-<h3 class="text-center">User's Information</h3>
-<div class="card my-3 pt-2 pl-3">
-    <form class="py-2 ml-2">
-        <div class="form-inline">
-            <input type="text" style="width: 200px" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Enter email id">
-            <button type="submit" class="btn btn-primary mb-2 mr-4">
-              <i class="fa fa-search fa-fw"></i>
-              Search
-            </button>
+<h3 class="text-center">Transation Logs</h3>
+<div class="div my-3 pt-2 pl-3">
+    <form class="form-inline justify-content-center py-2 ml-2">
+        <div class="form-check mb-2 mr-sm-2 mb-sm-0">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox"> Select Date
+            </label>
         </div>
-
+        <div class="input-group mb-2 pr-2">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                    <i class="fa fa-calendar fa-fw mr-2"></i>From</span>
+            </div>
+            <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+        </div>
+        <div class="input-group mb-2 pr-2">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                    <i class="fa fa-calendar fa-fw mr-2"></i>To</span>
+            </div>
+            <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+        </div>
+        <input type="text" style="width: 200px" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Enter search term">
+        <button type="submit" class="btn btn-primary mb-2 mr-4">
+            <i class="fa fa-search fa-fw"></i>
+            Search
+        </button>
     </form>
 </div>
-<div class="table-responsive">
+<div class="container table-responsive" style="width: 1000px;">
     <table class="table table-striped table-hover table-sm table-bordered">
         <thead class="thead-light">
             <tr>
-                <th>1</th>
-                <th>Email</th>
+                <th>#</th>
                 <th>Name</th>
-                <th>View Profile</th>
-                <th>View Logs</th>
+                <th>Username</th>
+                <th>Creation Date</th>
+                <th>Total Cases</th>
+                <th>Change Password</th>
+                <th>Block</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1,001</td>
-                <td>Lorem</td>
-                <td>ipsum</td>
-                <td>dolor</td>
-                <td>sit</td>
+            <tr class="align-middle">
+                <td class="align-middle">1</td>
+                <td class="align-middle">Suraj Soma</td>
+                <td class="align-middle">suraj.soma</td>
+                <td class="align-middle">10-10-1010</td>
+                <td class="align-middle">102</td>
+                <td class="px-2 align-middle">
+                    <button type="button" class="btn btn-default btn-block mx-auto" ng-click="click()">
+                        <i class="fa fa-key fa-fw"></i>
+                        Change Password
+                    </button>
+                </td>
+                <td class="px-2 align-middle">
+                    <button type="button" class="btn btn-default btn-block mx-auto" ng-click="click()">
+                        <i class="fa fa-unlock-alt fa-fw"></i>
+                        Block
+                    </button>
+                </td>
+                <td class="px-2 align-middle">
+                    <button type="button" class="btn btn-default btn-block mx-auto" ng-click="click()">
+                        <i class="fa fa-trash-o fa-fw"></i>
+                        Delete
+                    </button>
+                </td>
             </tr>
-            <tr>
-                <td>1,002</td>
-                <td>amet</td>
-                <td>consectetur</td>
-                <td>adipiscing</td>
-                <td>elit</td>
+
+            <tr class="align-middle">
+                <td class="align-middle">1</td>
+                <td class="align-middle">Suraj Soma</td>
+                <td class="align-middle">suraj.soma</td>
+                <td class="align-middle">10-10-1010</td>
+                <td class="align-middle">102</td>
+                <td class="px-2 align-middle">
+                    <button type="button" class="btn btn-default btn-block mx-auto" ng-click="click()">
+                        <i class="fa fa-key fa-fw"></i>
+                        Change Password
+                    </button>
+                </td>
+                <td class="px-2 align-middle">
+                    <button type="button" class="btn btn-default btn-block mx-auto" ng-click="click()">
+                        <i class="fa fa-unlock-alt fa-fw"></i>
+                        Block
+                    </button>
+                </td>
+                <td class="px-2 align-middle">
+                    <button type="button" class="btn btn-default btn-block mx-auto" ng-click="click()">
+                        <i class="fa fa-trash-o fa-fw"></i>
+                        Delete
+                    </button>
+                </td>
             </tr>
-            <tr>
-                <td>1,003</td>
-                <td>Integer</td>
-                <td>nec</td>
-                <td>odio</td>
-                <td>Praesent</td>
+            <tr class="align-middle">
+                <td class="align-middle">1</td>
+                <td class="align-middle">Suraj Soma</td>
+                <td class="align-middle">suraj.soma</td>
+                <td class="align-middle">10-10-1010</td>
+                <td class="align-middle">102</td>
+                <td class="px-2 align-middle">
+                    <button type="button" class="btn btn-default btn-block mx-auto" ng-click="click()">
+                        <i class="fa fa-key fa-fw"></i>
+                        Change Password
+                    </button>
+                </td>
+                <td class="px-2 align-middle">
+                    <button type="button" class="btn btn-default btn-block mx-auto" ng-click="click()">
+                        <i class="fa fa-unlock-alt fa-fw"></i>
+                        Block
+                    </button>
+                </td>
+                <td class="px-2 align-middle">
+                    <button type="button" class="btn btn-default btn-block mx-auto" ng-click="click()">
+                        <i class="fa fa-trash-o fa-fw"></i>
+                        Delete
+                    </button>
+                </td>
             </tr>
-            <tr>
-                <td>1,003</td>
-                <td>libero</td>
-                <td>Sed</td>
-                <td>cursus</td>
-                <td>ante</td>
+            <tr class="align-middle">
+                <td class="align-middle">1</td>
+                <td class="align-middle">Suraj Soma</td>
+                <td class="align-middle">suraj.soma</td>
+                <td class="align-middle">10-10-1010</td>
+                <td class="align-middle">102</td>
+                <td class="px-2 align-middle">
+                    <button type="button" class="btn btn-default btn-block mx-auto" ng-click="click()">
+                        <i class="fa fa-key fa-fw"></i>
+                        Change Password
+                    </button>
+                </td>
+                <td class="px-2 align-middle">
+                    <button type="button" class="btn btn-default btn-block mx-auto" ng-click="click()">
+                        <i class="fa fa-unlock-alt fa-fw"></i>
+                        Block
+                    </button>
+                </td>
+                <td class="px-2 align-middle">
+                    <button type="button" class="btn btn-default btn-block mx-auto" ng-click="click()">
+                        <i class="fa fa-trash-o fa-fw"></i>
+                        Delete
+                    </button>
+                </td>
             </tr>
-            <tr>
-                <td>1,004</td>
-                <td>dapibus</td>
-                <td>diam</td>
-                <td>Sed</td>
-                <td>nisi</td>
-            </tr>
-            <tr>
-                <td>1,005</td>
-                <td>Nulla</td>
-                <td>quis</td>
-                <td>sem</td>
-                <td>at</td>
-            </tr>
-            <tr>
-                <td>1,006</td>
-                <td>nibh</td>
-                <td>elementum</td>
-                <td>imperdiet</td>
-                <td>Duis</td>
-            </tr>
-            <tr>
-                <td>1,007</td>
-                <td>sagittis</td>
-                <td>ipsum</td>
-                <td>Praesent</td>
-                <td>mauris</td>
-            </tr>
-            <tr>
-                <td>1,008</td>
-                <td>Fusce</td>
-                <td>nec</td>
-                <td>tellus</td>
-                <td>sed</td>
-            </tr>
-            <tr>
-                <td>1,009</td>
-                <td>augue</td>
-                <td>semper</td>
-                <td>porta</td>
-                <td>Mauris</td>
-            </tr>
-            <tr>
-                <td>1,010</td>
-                <td>massa</td>
-                <td>Vestibulum</td>
-                <td>lacinia</td>
-                <td>arcu</td>
+            <tr class="align-middle">
+                <td class="align-middle">1</td>
+                <td class="align-middle">Suraj Soma</td>
+                <td class="align-middle">suraj.soma</td>
+                <td class="align-middle">10-10-1010</td>
+                <td class="align-middle">102</td>
+                <td class="px-2 align-middle">
+                    <button type="button" class="btn btn-default btn-block mx-auto" ng-click="click()">
+                        <i class="fa fa-key fa-fw"></i>
+                        Change Password
+                    </button>
+                </td>
+                <td class="px-2 align-middle">
+                    <button type="button" class="btn btn-default btn-block mx-auto" ng-click="click()">
+                        <i class="fa fa-unlock-alt fa-fw"></i>
+                        Block
+                    </button>
+                </td>
+                <td class="px-2 align-middle">
+                    <button type="button" class="btn btn-default btn-block mx-auto" ng-click="click()">
+                        <i class="fa fa-trash-o fa-fw"></i>
+                        Delete
+                    </button>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -120,11 +187,17 @@
                 <li class="page-item disabled">
                     <a class="page-link" href="#" tabindex="-1">Previous</a>
                 </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item active">
-                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                <li class="page-item">
+                    <a class="page-link" href="#">1</a>
                 </li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item active">
+                    <a class="page-link" href="#">2
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                </li>
                 <li class="page-item">
                     <a class="page-link" href="#">Next</a>
                 </li>
