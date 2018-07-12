@@ -7,9 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PayfixComponent implements OnInit {
 
-  constructor() {
-
-  }
+  constructor() { }
 
   ngOnInit() {
   }
