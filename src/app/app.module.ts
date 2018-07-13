@@ -8,7 +8,6 @@ import { AdminManageUsersComponent } from './admin-manage-users/admin-manage-use
 import { AdminPayfixComponent } from './admin-payfix/admin-payfix.component';
 import { AdminComponent } from './admin/admin.component';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { PayfixComponent } from './payfix/payfix.component';
 import { SigninComponent } from './signin/signin.component';
@@ -31,7 +30,6 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
     SigninComponent,
     PayfixComponent,
     AdminDashboardComponent,
