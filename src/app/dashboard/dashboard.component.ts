@@ -11,11 +11,24 @@ export class DashboardComponent implements OnInit {
   pageSizeLimit: number[] = [5, 10, 15, 20];
   today = Date.now();
 
-  dateFilter: Boolean = true;
-
   constructor() { }
 
   ngOnInit() {
   }
 
+  search(isFilterDate: Boolean, startDate: string, endDate: string, searchKey: string, searchTerm: string) {
+    if (isFilterDate) {
+      console.log("isFilterDate : " + isFilterDate);
+      console.log("StartDate : " + startDate);
+      console.log("EndDate : " + endDate);
+      console.log("SearchKey : " + searchKey);
+      console.log("SearchTerm : " + searchTerm);
+    } else if (isFilterDate == false) {
+      console.log("isFilterDate : " + isFilterDate);
+      console.log("StartDate : " + startDate);
+      console.log("EndDate : " + endDate);
+      console.log("SearchKey : " + searchKey);
+      console.log("SearchTerm : " + searchTerm);
+    }
+  }
 }

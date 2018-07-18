@@ -18,34 +18,31 @@
         <div class="input-group mb-2 pr-2">
             <div class="input-group-prepend">
                 <span class="input-group-text">
-                    <input class="form-check-input" type="checkbox" checked="true" #isDateFilterApplied (change)="dateFilter=!dateFilter">
+                    <input class="form-check-input" id="filterDate" name="filterDate" type="checkbox" checked="true" #filterDate (change)="0">
                 </span>
-                <span class="input-group-text bg-light" id="basic-addon1">
+                <span class="input-group-text bg-light">
                     <i class="fa fa-calendar fa-fw mr-2"></i>From</span>
             </div>
-            <input id="startDate" name="startDate" #startDate class="form-control" type="date" value="{{ today | date:'yyyy-MM-dd'}}" max="{{ today | date:'yyyy-MM-dd'}}" [disabled]="!dateFilter" data-toggle="tooltip" data-placement="top" title="Format : mm/dd/yyyy">
+            <input id="startDate" name="startDate" #startDate class="form-control" type="date" (change)="0" [value]="today | date:'yyyy-MM-dd'" [max]="today | date:'yyyy-MM-dd'" [readonly]="!filterDate.checked">
         </div>
         <div class="input-group mb-2 pr-3">
             <div class="input-group-prepend">
-                <span class="input-group-text bg-light" id="basic-addon1">
+                <span class="input-group-text bg-light">
                     <i class="fa fa-calendar fa-fw mr-2"></i>To</span>
             </div>
-            <input id="endDate" name="endDate" #endDate class="form-control" type="date" value="{{ today | date:'yyyy-MM-dd'}}" min="startDate.value" max="{{ today | date:'yyyy-MM-dd'}}" id="example-date-input" [disabled]="!dateFilter">
+            <input id="endDate" name="endDate" #endDate class="form-control" type="date" (change)="0" [value]="today | date:'yyyy-MM-dd'" [min]="startDate.value" [max]="today | date:'yyyy-MM-dd'" [readonly]="!filterDate.checked">
         </div>
-
         <div class="input-group mb-2 pl-3 pr-3">
             <div class="input-group-prepend">
-                <span class="input-group-text bg-light" id="basic-addon1">
-                    <select id="searchKey" class="selectpicker form-control form-control-sm">
-                        <!-- <option>User Name</option>
-                        <option>Client Name</option> -->
+                <span class="input-group-text bg-light">
+                    <select id="searchKey" name="searchKey" #searchKey class="selectpicker form-control form-control-sm">
                         <option *ngFor="let key of searchKeys" [value]="key">{{key}}</option>
                     </select>
                 </span>
             </div>
-            <input class="form-control" type="text" placeholder="Enter name here">
+            <input class="form-control" type="search" id="searchTerm" name="searchTerm" #searchTerm placeholder="Enter name here">
         </div>
-        <button type="submit" class="btn btn-primary mb-2">
+        <button type="button" id="search" name="search" #search (click)="search(filterDate.checked, startDate.value, endDate.value, searchKey.value, searchTerm.value)" class="btn btn-primary mb-2">
             <i class="fa fa-search fa-fw"></i>
             Search
         </button>

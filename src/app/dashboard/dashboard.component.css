@@ -1,0 +1,11 @@
+::-webkit-inner-spin-button { 
+    display: none; 
+}
+
+::-webkit-clear-button {
+	display: none;
+}
+
+::-webkit-search-cancel-button {
+    display: block;
+}

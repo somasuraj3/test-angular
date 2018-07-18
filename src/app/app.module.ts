@@ -8,13 +8,14 @@ import { AdminManageUsersComponent } from './admin-manage-users/admin-manage-use
 import { AdminPayfixComponent } from './admin-payfix/admin-payfix.component';
 import { AdminComponent } from './admin/admin.component';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { PayfixComponent } from './payfix/payfix.component';
-import { SigninComponent } from './signin/signin.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeaderComponent } from './header/header.component';
 import { LogsComponent } from './logs/logs.component';
 import { ManageUsersComponent } from './manage-users/manage-users.component';
+import { PayfixComponent } from './payfix/payfix.component';
+import { SigninComponent } from './signin/signin.component';
+
 
 
 const routes: Routes = [
