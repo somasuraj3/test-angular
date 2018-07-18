@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  searchKeys: string[] = ['Created By', 'Client Name'];
+  pageSizeLimit: number[] = [5, 10, 15, 20];
+  today = Date.now();
+
+  dateFilter: Boolean = true;
+
   constructor() { }
 
   ngOnInit() {

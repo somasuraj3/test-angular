@@ -2,7 +2,7 @@
     <h1 class="h2 mr-2">
         <i class="fa fa-bar-chart fa-fw fa-2x mr-2"></i>Dashboard</h1>
 </div> -->
-<div class="container pb-2 mb-3 border-bottom">
+<div class="container py-2 mb-5 border-bottom">
     <h1 class="h1 text-secondary">
         <i class="fa fa-bar-chart fa-fw fa-1x mr-2"></i>Dashboard</h1>
 </div>
@@ -18,26 +18,28 @@
         <div class="input-group mb-2 pr-2">
             <div class="input-group-prepend">
                 <span class="input-group-text">
-                    <input class="form-check-input" type="checkbox">
+                    <input class="form-check-input" type="checkbox" checked="true" #isDateFilterApplied (change)="dateFilter=!dateFilter">
                 </span>
                 <span class="input-group-text bg-light" id="basic-addon1">
                     <i class="fa fa-calendar fa-fw mr-2"></i>From</span>
             </div>
-            <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+            <input id="startDate" name="startDate" #startDate class="form-control" type="date" value="{{ today | date:'yyyy-MM-dd'}}" max="{{ today | date:'yyyy-MM-dd'}}" [disabled]="!dateFilter" data-toggle="tooltip" data-placement="top" title="Format : mm/dd/yyyy">
         </div>
         <div class="input-group mb-2 pr-3">
             <div class="input-group-prepend">
                 <span class="input-group-text bg-light" id="basic-addon1">
                     <i class="fa fa-calendar fa-fw mr-2"></i>To</span>
             </div>
-            <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+            <input id="endDate" name="endDate" #endDate class="form-control" type="date" value="{{ today | date:'yyyy-MM-dd'}}" min="startDate.value" max="{{ today | date:'yyyy-MM-dd'}}" id="example-date-input" [disabled]="!dateFilter">
         </div>
+
         <div class="input-group mb-2 pl-3 pr-3">
             <div class="input-group-prepend">
                 <span class="input-group-text bg-light" id="basic-addon1">
-                    <select id="lunch" class="selectpicker form-control form-control-sm" data-live-search="true" title="Please select a lunch ...">
-                        <option>User Name</option>
-                        <option>Client Name</option>
+                    <select id="searchKey" class="selectpicker form-control form-control-sm">
+                        <!-- <option>User Name</option>
+                        <option>Client Name</option> -->
+                        <option *ngFor="let key of searchKeys" [value]="key">{{key}}</option>
                     </select>
                 </span>
             </div>
@@ -50,7 +52,7 @@
     </form>
 </div>
 <div class="container table-responsive">
-    <table class="table table-light table-hover table-sm">
+    <table class="table table-light table-hover table-sm border-bottom">
         <thead class="thead-light">
             <tr>
                 <th>#</th>
@@ -150,8 +152,9 @@
             </tr>
         </tbody>
     </table>
+
     <div class="container d-block bg-light">
-        <nav aria-label="...">
+        <nav>
             <ul class="pagination pagination-sm justify-content-center">
                 <li class="page-item">
                     <a class="page-link" href="#" aria-label="Previous">
