@@ -1,3 +1,3 @@
 {
-    "getAllClients" : "/{author}/clients/getall"
+    "apiUrl": "{apiUrl}"
 }

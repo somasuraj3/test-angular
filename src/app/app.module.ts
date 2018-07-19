@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminChangePasswordComponent } from './admin-change-password/admin-change-password.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
@@ -15,6 +16,7 @@ import { LogsComponent } from './logs/logs.component';
 import { ManageUsersComponent } from './manage-users/manage-users.component';
 import { PayfixComponent } from './payfix/payfix.component';
 import { SigninComponent } from './signin/signin.component';
+import { ConfigService } from './config.service';
 
 
 
@@ -46,9 +48,12 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(routes, { useHash: true })
   ],
-  providers: [],
+  providers: [
+    ConfigService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
