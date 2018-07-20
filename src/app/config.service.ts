@@ -15,15 +15,18 @@ export interface Config {
 })
 export class ConfigService {
 
-  configUrl = 'assets/config.json';
+  private configUrl = 'assets/config.json';
+  private config: Config;
+  private error: any;
 
-  constructor(private http: HttpClient) { }
-
-  getConfig() {
-    return this.http.get<Config>(this.configUrl)
+  constructor(private http: HttpClient) {
+    this.http.get<Config>(this.configUrl)
       .pipe(
         retry(3), // retry a failed request up to 3 times
         catchError(this.handleError) // then handle the error
+      ).subscribe(
+        (data: Config) => this.config = { apiUrl: data['apiUrl'] }, // success path
+        error => this.error = error // error path
       );
   }
 
@@ -41,6 +44,10 @@ export class ConfigService {
     // return an observable with a user-facing error message
     return throwError(
       'Something bad happened; please try again later.');
+  }
+
+  getConfig() {
+    return this.config;
   }
 
 }

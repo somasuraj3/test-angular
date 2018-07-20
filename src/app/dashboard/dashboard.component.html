@@ -42,7 +42,7 @@
             </div>
             <input class="form-control" type="search" id="searchTerm" name="searchTerm" #searchTerm placeholder="Enter name here">
         </div>
-        <button type="button" id="search" name="search" #search (click)="search(filterDate.checked, startDate.value, endDate.value, searchKey.value, searchTerm.value)" class="btn btn-primary mb-2">
+        <button type="button" id="search" name="search" #search (click)="searchClients(filterDate.checked, startDate.value, endDate.value, searchKey.value, searchTerm.value)" class="btn btn-primary mb-2">
             <i class="fa fa-search fa-fw"></i>
             Search
         </button>
