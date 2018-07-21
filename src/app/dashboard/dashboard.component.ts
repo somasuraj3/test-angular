@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfigService, Config } from '../config.service';
+import { SearchClientParams } from './search-client-params';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,9 +9,7 @@ import { ConfigService, Config } from '../config.service';
 })
 export class DashboardComponent implements OnInit {
 
-  searchKeys: string[] = ['Created By', 'Client Name'];
   pageSizeLimit: number[] = [5, 10, 15, 20];
-  today = Date.now();
   error: any;
   headers: string[];
   config: Config;
@@ -18,28 +17,13 @@ export class DashboardComponent implements OnInit {
   constructor(private configService: ConfigService) { }
 
   ngOnInit() {
-    this.configService.getConfig()
-      .subscribe(
-        (data: Config) => this.config = { apiUrl: data['apiUrl'] }, // success path
-        error => this.error = error // error path
-      );
-    console.log('Config : ' + this.config);
+
   }
 
-  searchClients(isFilterDate: Boolean, startDate: string, endDate: string, searchKey: string, searchTerm: string) {
-    if (isFilterDate) {
-      console.log('isFilterDate : ' + isFilterDate);
-      console.log('StartDate : ' + startDate);
-      console.log('EndDate : ' + endDate);
-      console.log('SearchKey :' + searchKey);
-      console.log('SearchTerm : ' + searchTerm);
-    } else if (isFilterDate === false) {
-      console.log('isFilterDate : ' + isFilterDate);
-      console.log('StartDate : ' + startDate);
-      console.log('EndDate : ' + endDate);
-      console.log('SearchKey :' + searchKey);
-      console.log('SearchTerm : ' + searchTerm);
-    }
-    console.log(this.config);
+  searchClients(searchClientParams: SearchClientParams, page: string, size: string) {
+    console.log('In print searchClientParams');
+    console.log('Search Parameters : ' + JSON.stringify(searchClientParams));
+    console.log('Page : ' + page);
+    console.log('Size : ' + size);
   }
 }

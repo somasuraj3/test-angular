@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminPayfixComponent } from './admin-payfix.component';
+import { SearchClientComponent } from './search-client.component';
 
-describe('AdminPayfixComponent', () => {
-  let component: AdminPayfixComponent;
-  let fixture: ComponentFixture<AdminPayfixComponent>;
+describe('SearchClientComponent', () => {
+  let component: SearchClientComponent;
+  let fixture: ComponentFixture<SearchClientComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminPayfixComponent ]
+      declarations: [ SearchClientComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdminPayfixComponent);
+    fixture = TestBed.createComponent(SearchClientComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

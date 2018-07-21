@@ -1,13 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule, Routes } from '@angular/router';
-import { AdminChangePasswordComponent } from './admin-change-password/admin-change-password.component';
-import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-import { AdminLogsComponent } from './admin-logs/admin-logs.component';
-import { AdminManageUsersComponent } from './admin-manage-users/admin-manage-users.component';
-import { AdminPayfixComponent } from './admin-payfix/admin-payfix.component';
-import { AdminComponent } from './admin/admin.component';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -17,17 +11,8 @@ import { ManageUsersComponent } from './manage-users/manage-users.component';
 import { PayfixComponent } from './payfix/payfix.component';
 import { SigninComponent } from './signin/signin.component';
 import { ConfigService } from './config.service';
-
-
-
-const routes: Routes = [
-  { path: '', redirectTo: 'signin', pathMatch: 'full' },
-  { path: 'signin', component: SigninComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'payfix', component: PayfixComponent },
-  { path: 'manageusers', component: ManageUsersComponent },
-  { path: 'logs', component: LogsComponent }
-];
+import { SearchClientComponent } from './dashboard/search-client/search-client.component';
+import { ClientListComponent } from './dashboard/client-list/client-list.component';
 
 @NgModule({
   declarations: [
@@ -35,21 +20,17 @@ const routes: Routes = [
     HeaderComponent,
     SigninComponent,
     PayfixComponent,
-    AdminDashboardComponent,
-    AdminComponent,
-    AdminChangePasswordComponent,
-    AdminPayfixComponent,
-    AdminManageUsersComponent,
-    AdminLogsComponent,
     DashboardComponent,
     ChangePasswordComponent,
     LogsComponent,
-    ManageUsersComponent
+    ManageUsersComponent,
+    SearchClientComponent,
+    ClientListComponent,
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
-    RouterModule.forRoot(routes, { useHash: true })
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     ConfigService

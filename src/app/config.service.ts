@@ -16,18 +16,11 @@ export interface Config {
 export class ConfigService {
 
   private configUrl = 'assets/config.json';
-  private config: Config;
+  config: Config;
   private error: any;
 
   constructor(private http: HttpClient) {
-    this.http.get<Config>(this.configUrl)
-      .pipe(
-        retry(3), // retry a failed request up to 3 times
-        catchError(this.handleError) // then handle the error
-      ).subscribe(
-        (data: Config) => this.config = { apiUrl: data['apiUrl'] }, // success path
-        error => this.error = error // error path
-      );
+    this.getConfig();
   }
 
   private handleError(error: HttpErrorResponse) {
@@ -47,7 +40,14 @@ export class ConfigService {
   }
 
   getConfig() {
-    return this.config;
+    this.http.get<Config>(this.configUrl)
+      .pipe(
+        retry(3), // retry a failed request up to 3 times
+        catchError(this.handleError) // then handle the error
+      ).subscribe(
+          (data: Config) => this.config = { apiUrl: data['apiUrl'] }, // success path
+          error => this.error = error // error path
+        );
   }
 
 }
